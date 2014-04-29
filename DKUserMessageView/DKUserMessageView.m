@@ -56,15 +56,11 @@
 
 
 - (void)dk_loading:(BOOL)loading spinner:(BOOL)spinner {    
+    self.hidden = !loading;
     if (spinner ) {
         if (loading) {
             CGRect frame = CGRectMake(0, 0, 20, 20);
-            frame.origin.y = self.dk_userMessageLabelTop;
-            
-            
-            
-            
-            
+            frame.origin.y = self.dk_userMessageLabelTop;            
             self.dk_spinner.frame = frame;
             
             [self centerViewHorizontally:self.dk_spinner];
@@ -76,10 +72,9 @@
         }
     }
     else {
-    self.hidden = !loading;
-    if (!self.hidden) {
-        [self dk_displayMessage:@"Loading"];
-    }
+        if (!self.hidden) {
+            [self dk_displayMessage:@"Loading"];
+        }
     }
 }
 
