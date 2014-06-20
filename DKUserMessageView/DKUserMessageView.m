@@ -42,6 +42,7 @@
     textRect.size.width = ceilf(textRect.size.width);
     textRect.size.height = ceilf(textRect.size.height);
     frame.size = textRect.size;
+    frame.origin.x = 0;
     frame.origin.y = self.dk_userMessageLabelTop;
 
     self.dk_userMessageLabel.frame = frame;
